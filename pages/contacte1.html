@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="images/visoca.png">
+    <script src="../java/main.js" defer></script>
+
+    <title>Satul Visoca</title>
+
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="../images/homes.png">
+        <navbar>
+            <a href="../index.html">Acasă</a>
+            <a href="prezentare.html">Pezentarea generală</a>
+            <a href="primaria.html">Primăria</a>
+
+            <a href="institutii.html">Instituții</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="contacte.html">Contacte</a>
+
+        </navbar>
+        <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars"></i>
+
+    </header>
+
+
+    <main class="top">
+        <h1 class="institutii">Primăria</h1>
+        <table>
+            <tr class="prima">
+                <td><a href="primaria.html">Date</a></td>
+                <td><a href="planuri.html">Succese</a></td>
+                <td><a href="ordine.html">Ordine</a></td>
+                <td><a href="contacte1.html">Contacte</a></td>
+            </tr>
+        </table>
+
+
+        
+            <div class="row">
+                <div class="col-50">
+                    <div class="contacte contacte1">
+                        <h2 class="centered1">Date de contact</h2>
+                        <b>Adresa : </b>Soroca, Visoca<br />
+                        <br /><b>Email :</b>
+                        <br />Primăria :
+                        <a href="mailto:primariavisoca@gmail.com">primariavisoca@gmail.com</a>
+                        <br />
+                        <b>Telefon :</b>023052238 <br /><br />
+                        <b>Email :</b><br />
+                        Primarul :
+                        <a href="mailto:grigoreplesca@gmail.com"> grigoreplesca@gmail.com</a>
+                        <br />
+                        <b>Telefon :</b>023052888 <br />
+                        <br /><b>Email :</b><br />
+                        Secretarul
+                        <a href="mailto:eugeniapinzari@gmail.com">eugeniapinzari@gmail.com</a>
+                        <br />
+                        <b>Telefon :</b>023052236<br /><br />
+                        <b>Ore de lucru : </b><br />
+                        09:00 - 17:00 Luni-Vineri
+                    </div>
+
+                </div>
+
+                <div class="col-50">
+                    <div class="cform cform1">
+                        <h3>Lasa un mesaj</h3>
+                        <form id="formular" action="https://sheetdb.io/api/v1/57ew84cafh0jm">
+                            <input required name="data[nume]" type="text" placeholder="Nume Prenume">
+                            <br /><br />
+                            <input required name="data[email]" type="email" placeholder="E-mail">
+                            <br /><br />
+                            <textarea required name="data[mesaj]" cols="16" rows="7" placeholde="Mesajul"></textarea>
+                            <br /><br />
+                            <input type="submit" value="Transmite">
+
+
+                    </div>
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        
+        <br />
+        <div class="card1 card6">
+            <iframe class="harta"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18378.124451906257!2d27.902355055968165!3d48.24362142083216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cccbba05246515%3A0x8d06cfbf2fbba863!2z0JLQuNGB0L7QutCwLCDQnNC-0LvQtNCw0LLQuNGP!5e1!3m2!1sru!2s!4v1659875017761!5m2!1sru!2s"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+
+            </iframe>
+            <br /><br />
+        </div>
+
+
+
+
+
+
+
+    </main>
+    <table>
+        <tr class="prima">
+            <td><a href="primaria.html">Date</a></td>
+            <td><a href="planuri.html">Succese</a></td>
+            <td><a href="ordine.html">Ordine</a></td>
+            <td><a href="contacte1.html">Contacte</a></td>
+        </tr>
+    </table>
+    <footer>
+        Visoca &nbsp;
+        <div id="year"></div>
+
+
+    </footer>
+    <script>
+        var form = document.getElementById('formular');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("formular")),
+            }).then(
+                response => response.json()
+            ).then((html) => {
+                form.reset();
+                alert('succes');
+            });
+        });
+    </script>
+</body>
+
+</html>

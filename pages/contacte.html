@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale-1.0">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="icon" href="images/visoca.png">
+  <script src="../java/main.js" defer></script>
+
+  <title>Satul Visoca</title>
+</head>
+
+<body>
+
+  <header>
+    <img class="logo" src="../images/telephone.png">
+    <navbar>
+      <a href="../index.html">Acasă</a>
+      <a href="prezentare.html">Pezentarea generală</a>
+      <a href="primaria.html">Primăria</a>
+
+      <a href="institutii.html">Instituții</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contacte.html">Contacte</a>
+      
+    </navbar>
+    <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars"></i>
+
+  </header>
+
+
+  <main>
+    <h1 class="institutii">Contacte</h1>
+    </br></br> 
+    <section class="cont">
+      <p>
+Ne puteți contacta, dacă ne-a reușit să vă intrigăm.
+      </p>
+
+
+      <div class="row">
+        <div class="col-50">
+          <div class="contacte">
+
+            <h2 class="centered1">Date de contact</h2><br/><br/>
+            <b>Clubul Aleg</b><br/>
+            <a href="mailto:liceulteoretic@gmail.com">liceulteoreticvisoca@gmail.com</a>
+            <br /><br />
+
+            <b>Președintele clubului:</b>  Garbuz Stela<br/>
+            <b>Email: </b><a href="mailto:garbuzstela@gmail.com">garbuzstela@gmail.com</a>
+            <br/><b>Telefon:</b> 023052238<br /><br />
+
+            <b>Vice-președinte: </b> Avricenco Olesea<br/>
+            <b>Email: </b><a href="mailto:avricencoolesea@gmail.com">avricencoolesea@gmail.com</a>
+            <br/><b>Telefon:</b> 023052216 <br/>
+          </div>
+
+        </div>
+
+
+        <div class="col-50">
+
+          <div class="cform">
+            <h3>Contactează-ne</h3>
+            <form id="formular" action="https://sheetdb.io/api/v1/57ew84cafh0jm">
+              <input required name="data[nume]" type="text" placeholder="Nume Prenume">
+              <br /><br />
+              <input required name="data[email]" type="email" placeholder="E-mail">
+              <br /><br />
+              <textarea required name="data[mesaj]" cols="16" rows="7" placeholde="Mesajul"></textarea>
+              <br /><br />
+              <input type="submit" value="Transmite">
+
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+  </main>
+
+  <footer>
+    Visoca &nbsp;
+    <div id="year"></div>
+
+
+  </footer>
+  <script>
+    var form = document.getElementById('formular');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("formular")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        form.reset();
+        alert('succes');
+      });
+    });
+  </script>
+</body>
+
+</html>
